@@ -22,8 +22,8 @@
     navList.setAttribute("data-open", String(open));
     toggle.setAttribute("aria-expanded", String(open));
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    var icon = toggle.querySelector("i");
-    if (icon) icon.className = open ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+    var use = toggle.querySelector(".icon use");
+    if (use) use.setAttribute("href", open ? "#i-close" : "#i-menu");
   }
 
   if (toggle && navList) {
@@ -76,7 +76,10 @@
           revealObserver.unobserve(entry.target);
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      // Fixed px, not a percentage: a percentage scales with viewport height,
+      // so on a very tall window the dead zone at the bottom can be large
+      // enough that content there never intersects and stays hidden.
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
     );
 
     revealables.forEach(function (el, i) {

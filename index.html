@@ -35,15 +35,56 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+    <!-- Marks that scripting is available, before any CSS is applied.
+         Scroll-reveal only hides content under html.js, so if this never
+         runs the page still renders everything, just unanimated. -->
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
 
     <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
+    <!-- Icon sprite. Replaces Font Awesome: ~376KB of CSS + webfonts for
+         eight glyphs, versus ~3KB here with no third-party request. -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-arrow-right" viewBox="0 0 24 24">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24">
+        <path d="M12 19V5M6 11l6-6 6 6" />
+      </symbol>
+      <symbol id="i-external" viewBox="0 0 24 24">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+        <path d="M15 3h6v6M10 14 21 3" />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M3 6h18M3 12h18M3 18h18" />
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <path d="M18 6 6 18M6 6l12 12" />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="m22 7-10 6L2 7" />
+      </symbol>
+      <symbol id="i-github" viewBox="0 0 24 24">
+        <path
+          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+        />
+      </symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24">
+        <rect x="2" y="2" width="20" height="20" rx="5" />
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+        <path d="M17.5 6.5h.01" />
+      </symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24">
+        <path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.3-1.7c1.7 1 3.7 1.4 5.7 1.4 6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 0 1-1.5-5.3C2.2 6.4 6.6 2 12 2c2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.4-4.4 9.9-9.9 9.9z" />
+        <path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z" />
+      </symbol>
+    </svg>
+
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header" id="top">
@@ -65,7 +106,7 @@
           aria-expanded="false"
           aria-controls="nav-list"
         >
-          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true"><use href="#i-menu" /></svg>
         </button>
       </nav>
     </header>
@@ -77,7 +118,7 @@
           <div class="hero-copy">
             <p class="eyebrow">Kampala, Uganda</p>
 
-            <h1>Francis<span class="surname">Obalim</span></h1>
+            <h1>Francis <span class="surname">Obalim</span></h1>
 
             <p class="hero-role">
               Front-end developer &amp; designer building web products that are fast, clear
@@ -92,7 +133,7 @@
 
             <div class="hero-actions">
               <a class="btn btn--primary" href="#projects">
-                View my work <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                View my work <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
               </a>
               <a class="btn btn--ghost" href="#contact">Get in touch</a>
             </div>
@@ -216,8 +257,8 @@
             <p class="eyebrow">Selected work</p>
             <h2>Things I've built</h2>
             <p>
-              A mix of client-style builds and self-directed projects. Source is on
-              GitHub for each one.
+              A mix of client-style builds and self-directed projects, from static
+              sites to React applications with a real back end.
             </p>
           </div>
 
@@ -254,17 +295,6 @@
                   <li class="chip">Auth</li>
                 </ul>
 
-                <div class="project-links">
-                  <a
-                    class="btn btn--primary btn--sm"
-                    href="https://github.com/obalimfrancis/Savannah-Grand-Hotel"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fa-brands fa-github" aria-hidden="true"></i>
-                    View code<span class="sr-only"> for Savannah Grand Hotel</span>
-                  </a>
-                </div>
               </div>
             </article>
 
@@ -303,7 +333,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Live demo <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    Live demo <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
                   </a>
                 </div>
               </div>
@@ -336,17 +366,6 @@
                   <li class="chip">Vite</li>
                 </ul>
 
-                <div class="project-links">
-                  <a
-                    class="btn btn--ghost btn--sm"
-                    href="https://github.com/obalimfrancis/store-web-application"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fa-brands fa-github" aria-hidden="true"></i>
-                    View code<span class="sr-only"> for Store Web Application</span>
-                  </a>
-                </div>
               </div>
             </article>
 
@@ -377,17 +396,6 @@
                   <li class="chip">Vite</li>
                 </ul>
 
-                <div class="project-links">
-                  <a
-                    class="btn btn--ghost btn--sm"
-                    href="https://github.com/obalimfrancis/E-commerce-Products-page"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fa-brands fa-github" aria-hidden="true"></i>
-                    View code<span class="sr-only"> for E-commerce Products Page</span>
-                  </a>
-                </div>
               </div>
             </article>
 
@@ -418,17 +426,6 @@
                   <li class="chip">Responsive</li>
                 </ul>
 
-                <div class="project-links">
-                  <a
-                    class="btn btn--ghost btn--sm"
-                    href="https://github.com/obalimfrancis/Restaurant-256-website"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fa-brands fa-github" aria-hidden="true"></i>
-                    View code<span class="sr-only"> for Restaurant 256</span>
-                  </a>
-                </div>
               </div>
             </article>
 
@@ -465,17 +462,6 @@
                   <li class="chip">Vite</li>
                 </ul>
 
-                <div class="project-links">
-                  <a
-                    class="btn btn--ghost btn--sm"
-                    href="https://github.com/obalimfrancis/Career-Guidance-App"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fa-brands fa-github" aria-hidden="true"></i>
-                    View code<span class="sr-only"> for Career Guidance App</span>
-                  </a>
-                </div>
               </div>
             </article>
           </div>
@@ -506,7 +492,7 @@
                 rel="noopener noreferrer"
                 aria-label="Message Francis on WhatsApp"
               >
-                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                <svg class="icon icon--filled" aria-hidden="true"><use href="#i-whatsapp" /></svg>
               </a>
             </li>
             <li>
@@ -517,7 +503,7 @@
                 rel="noopener noreferrer"
                 aria-label="Francis on GitHub"
               >
-                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
               </a>
             </li>
             <li>
@@ -528,7 +514,7 @@
                 rel="noopener noreferrer"
                 aria-label="Francis on Instagram"
               >
-                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                <svg class="icon" aria-hidden="true"><use href="#i-instagram" /></svg>
               </a>
             </li>
             <li>
@@ -536,7 +522,7 @@
                 href="mailto:obalimfrancis076@gmail.com"
                 aria-label="Email Francis"
               >
-                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
               </a>
             </li>
           </ul>
@@ -547,7 +533,7 @@
     <footer class="colophon">
       <div class="container">
         <p>&copy; <span id="year">2026</span> Francis Obalim. Built in Kampala.</p>
-        <p><a href="#top">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a></p>
+        <p><a href="#top">Back to top <svg class="icon" aria-hidden="true"><use href="#i-arrow-up" /></svg></a></p>
       </div>
     </footer>
 
