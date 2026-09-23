@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Abstract illustration of film poster cards with star ratings">
+  <defs>
+    <linearGradient id="mv-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#182124"/>
+      <stop offset="100%" stop-color="#101618"/>
+    </linearGradient>
+    <linearGradient id="mv-glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4fa39e" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#e6c07b" stop-opacity=".1"/>
+    </linearGradient>
+    <pattern id="mv-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#2b3639" stroke-width="1" opacity=".5"/>
+    </pattern>
+    <symbol id="mv-star" viewBox="0 0 24 24">
+      <path d="M12 2.5l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3 1.1-6.5L2.6 9.3l6.5-.9z"/>
+    </symbol>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#mv-bg)"/>
+  <rect width="800" height="500" fill="url(#mv-grid)"/>
+  <rect width="800" height="500" fill="url(#mv-glow)"/>
+
+  <!-- side poster, left -->
+  <g transform="translate(64 128) rotate(-4 90 122)" opacity=".55">
+    <rect width="180" height="244" rx="12" fill="#0d1214" stroke="#2b3639"/>
+    <rect x="14" y="14" width="152" height="176" rx="8" fill="#1f292c"/>
+    <circle cx="90" cy="86" r="30" fill="#2b3639"/>
+    <path d="M30 164l34-40 26 28 22-24 30 36z" fill="#2b3639"/>
+    <rect x="14" y="206" width="92" height="9" rx="4.5" fill="#2b3639"/>
+    <rect x="14" y="223" width="58" height="7" rx="3.5" fill="#243033"/>
+  </g>
+
+  <!-- side poster, right -->
+  <g transform="translate(556 128) rotate(4 90 122)" opacity=".55">
+    <rect width="180" height="244" rx="12" fill="#0d1214" stroke="#2b3639"/>
+    <rect x="14" y="14" width="152" height="176" rx="8" fill="#1f292c"/>
+    <rect x="46" y="52" width="88" height="96" rx="8" fill="#2b3639"/>
+    <rect x="14" y="206" width="108" height="9" rx="4.5" fill="#2b3639"/>
+    <rect x="14" y="223" width="46" height="7" rx="3.5" fill="#243033"/>
+  </g>
+
+  <!-- centre poster -->
+  <g transform="translate(286 92)">
+    <rect width="228" height="316" rx="16" fill="#0d1214" stroke="#e6c07b" stroke-opacity=".45" stroke-width="2"/>
+    <rect x="16" y="16" width="196" height="212" rx="10" fill="#1f292c"/>
+
+    <!-- play button -->
+    <circle cx="114" cy="122" r="40" fill="#0d1214" fill-opacity=".72" stroke="#e6c07b" stroke-width="3"/>
+    <path d="M104 104l30 18-30 18z" fill="#e6c07b"/>
+
+    <!-- skyline / scene hint -->
+    <path d="M32 208l36-42 28 30 24-26 32 40 28-22v24H32z" fill="#2b3639"/>
+
+    <!-- title + rating -->
+    <rect x="16" y="246" width="128" height="11" rx="5.5" fill="#b3c0c0" opacity=".65"/>
+    <rect x="16" y="266" width="82" height="8" rx="4" fill="#2b3639"/>
+
+    <g fill="#e6c07b">
+      <use href="#mv-star" x="16" y="286" width="18" height="18"/>
+      <use href="#mv-star" x="38" y="286" width="18" height="18"/>
+      <use href="#mv-star" x="60" y="286" width="18" height="18"/>
+      <use href="#mv-star" x="82" y="286" width="18" height="18"/>
+    </g>
+    <g fill="#2b3639">
+      <use href="#mv-star" x="104" y="286" width="18" height="18"/>
+    </g>
+
+    <rect x="164" y="286" width="48" height="18" rx="9" fill="#4fa39e" opacity=".6"/>
+  </g>
+</svg>
