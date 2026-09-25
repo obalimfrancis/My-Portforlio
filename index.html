@@ -49,6 +49,18 @@
     <!-- Icon sprite. Replaces Font Awesome: ~376KB of CSS + webfonts for
          eight glyphs, versus ~3KB here with no third-party request. -->
     <svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true" focusable="false">
+      <!-- Brand mark: the ring is the O of Obalim, the F of Francis nested
+           inside it. Geometry is deliberate - the F's bounding box is
+           centred on the circle and stays clear of the inner edge, so the
+           mark holds together down to 16px. -->
+      <symbol id="i-logo" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="39" fill="none" stroke="currentColor" stroke-width="9" />
+        <g fill="currentColor">
+          <rect x="34" y="28" width="10" height="44" />
+          <rect x="34" y="28" width="32" height="10" />
+          <rect x="34" y="45" width="24" height="10" />
+        </g>
+      </symbol>
       <symbol id="i-arrow-right" viewBox="0 0 24 24">
         <path d="M5 12h14M13 6l6 6-6 6" />
       </symbol>
@@ -89,7 +101,9 @@
 
     <header class="site-header" id="top">
       <nav class="container nav" aria-label="Primary">
-        <a href="#top" class="brand" aria-label="Francis Obalim — home">O<span>/</span>B</a>
+        <a href="#top" class="brand" aria-label="Francis Obalim — home">
+          <svg class="brand-mark" aria-hidden="true"><use href="#i-logo" /></svg>
+        </a>
 
         <ul class="nav-list" id="nav-list">
           <li><a href="#home">Home</a></li>

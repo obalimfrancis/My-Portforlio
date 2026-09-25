@@ -282,17 +282,26 @@ p {
 }
 
 .brand {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--text);
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
+  color: var(--gold);
+  /* Widen the hit area to a comfortable tap target without moving the mark. */
+  padding: var(--s-2);
+  margin: calc(var(--s-2) * -1);
+  border-radius: var(--r-sm);
+  transition: color var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
 
-.brand span {
-  color: var(--gold);
+.brand:hover,
+.brand:focus-visible {
+  color: var(--gold-hi);
+  transform: scale(1.04);
+}
+
+.brand-mark {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: block;
 }
 
 .nav-list {
